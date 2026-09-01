@@ -1,0 +1,27 @@
+server:
+  port: 8089
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: user-service
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/users/**
+
+            - id: book-service
+              uri: lb://BOOK-SERVICE
+              predicates:
+                - Path=/api/books/**
+
+            - id: borrow-service
+              uri: lb://BORROW-SERVICE
+              predicates:
+                - Path=/api/borrows/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/

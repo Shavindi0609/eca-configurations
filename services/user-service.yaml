@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/eca_user_db
+#data:
+#    mongodb:
+#      uri: mongodb://localhost:27017/eca_user_db
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+    register-with-eureka: true
+    fetch-registry: true

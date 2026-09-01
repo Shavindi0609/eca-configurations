@@ -1,0 +1,16 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    lk.ijse.gdse: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.sql: DEBUG

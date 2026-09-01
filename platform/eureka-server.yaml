@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    register-with-eureka: false # තමන් විසින්ම register වීම වැළැක්වීමට
+    fetch-registry: false       # අනිත් අයගෙන් registry එක fetch නොකිරීමට
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
