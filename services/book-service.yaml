@@ -2,8 +2,10 @@ server:
   port: 0
 
 spring:
+  application:
+    name: book-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/db-capston
+    url: jdbc:postgresql://127.0.0.1:5432/db-capston
     username: postgres
     password: psql
     driver-class-name: org.postgresql.Driver
@@ -11,23 +13,55 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-      show-sql: true
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 # Custom Property for Image Upload Directory
 file:
   upload-dir: uploads/images/
 
-  eureka:
-    instance:
-      instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    service-url:
+      defaultZone: http://vm-node-a:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
 
 
-
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8080/eureka/
-#    register-with-eureka: true
-#    fetch-registry: true
+#server:
+#  port: 0
+#
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/db-capston
+#    username: postgres
+#    password: psql
+#    driver-class-name: org.postgresql.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
+#      properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.PostgreSQLDialect
+## Custom Property for Image Upload Directory
+#file:
+#  upload-dir: uploads/images/
+#
+#  eureka:
+#    instance:
+#      instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+#
+#
+#
+##eureka:
+##  client:
+##    service-url:
+##      defaultZone: http://localhost:8080/eureka/
+##    register-with-eureka: true
+##    fetch-registry: true
