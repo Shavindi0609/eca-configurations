@@ -30,8 +30,6 @@ eureka:
       defaultZone: http://vm-node-a:8080/eureka/
     register-with-eureka: true
     fetch-registry: true
-
-
 #server:
 #  port: 0
 #
