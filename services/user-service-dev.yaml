@@ -4,7 +4,8 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://root:kLMsOp8O7cTj_o8wt0UVbmx3djEz0Lq5ckhPsY0P1Sd2aq6o@a70d3625-eeb6-48a9-870c-8b6df8292e50.asia-southeast1.firestore.goog:443/db-capston?loadBalanced=true&tls=true&authMechanism=SCRAM-SHA-256&retryWrites=false
+      uri: mongodb://localhost:27017/eca_user_db
+
 #data:
 #    mongodb:
 #      uri: mongodb://localhost:27017/eca_user_db

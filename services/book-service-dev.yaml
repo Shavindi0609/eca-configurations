@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/db-capston
+    url: jdbc:postgresql://localhost:12500/book_db
     username: postgres
     password: psql
     driver-class-name: org.postgresql.Driver
@@ -15,12 +15,19 @@ spring:
       properties:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialect
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8080/eureka/
+# Custom Property for Image Upload Directory
+file:
+  upload-dir: uploads/images/
 
   eureka:
     instance:
       instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 
+
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8080/eureka/
+#    register-with-eureka: true
+#    fetch-registry: true

@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/db-capston
+    url: jdbc:postgresql://localhost:12500/book_db
     username: postgres
     password: psql
     driver-class-name: org.postgresql.Driver
