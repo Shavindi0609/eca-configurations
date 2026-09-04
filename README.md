@@ -22,7 +22,7 @@ This repository serves as the centralized configuration server repository for th
 
 ## Repository Structure
 - `platform/` - Configurations related to platform components (API Gateway, Eureka, etc.)
-- `services/` - Configurations specific to individual microservices (MySQL and MongoDB-backed services)
+- `services/` - Configurations specific to individual microservices (Postgre SQL and MongoDB-backed services)
 - `application.yaml` - Global configuration properties
 
 ---
